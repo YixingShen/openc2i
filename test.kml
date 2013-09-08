@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+    <Document id="feat_6">
+        <Style id="stylesel_0">
+            <IconStyle>
+                <scale>1</scale>
+                <colorMode>normal</colorMode>
+                <heading>0</heading>
+                <Icon>
+                    <href>http://devices.sensorflock.com/icons/uag-icon.gif</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Placemark id="feat_7">
+            <name>uag1</name>
+            <styleUrl>#stylesel_0</styleUrl>
+            <Point id="geom_4">
+                <coordinates>73.116615,33.5686733333,0.0</coordinates>
+            </Point>
+        </Placemark>
+    </Document>
+</kml>

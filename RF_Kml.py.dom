@@ -1,0 +1,88 @@
+'''
+Created on Feb 19, 2012
+
+@author: weqaar
+'''
+import xml.dom.minidom
+#from xml.dom.minidom import Node
+#from xml.dom import *
+
+class RF_Kml (object):
+	kml_file = 'uag.kml'
+	doc = None 
+	FILE = None 
+	mode_read = 'r'
+	mode_write = 'w'
+	mode_readwrite = 'r+'
+	mode_append = 'a'
+
+	def __init__ (self):
+		global kml_doc
+      		kml_doc = self.create_document('SensorFlock\'s', 'Unattended Ground Sensor GIS')
+		global document
+		document = kml_doc.documentElement.getElementsByTagName('Document')[0]
+		self.open_file(self.mode_write)	
+		self.FILE.writelines(kml_doc.toprettyxml(indent="  ", encoding='UTF-8')) 
+		self.close_file()
+ 
+	def create_point(self, _name, _coords):
+		placemark = self.create_placemark(_name, _coords)
+        	document.appendChild(placemark.documentElement)
+		print "\nplacemark: " + kml_doc.toprettyxml(indent="  ", encoding='UTF-8') + "\n"
+	
+	def open_file(self, mode):
+		self.FILE = open(self.kml_file, mode)
+
+	def write_data(self):
+		self.open_file(self.mode_readwrite)	
+		# Write all the lines at once:
+		self.FILE.writelines(kml_doc.toprettyxml(indent="  ", encoding='UTF-8')) 
+		# Alternatively write them one by one:
+		'''
+		for name in namelist:
+			self.FILE.write(name)
+		'''
+		self.close_file()
+
+	def close_file(self):
+		self.FILE.close()
+
+	def create_document(self, title, description=''):
+    		doc = xml.dom.minidom.Document()
+    		kml = doc.createElement('kml')
+    		kml.setAttribute('xmlns', 'http://www.opengis.net/kml/2.2')
+    		doc.appendChild(kml)
+    		document_ = doc.createElement('Document')
+    		kml.appendChild(document_)
+    		docName = doc.createElement('name')
+    		document_.appendChild(docName)
+    		docName_text = doc.createTextNode(title)
+    		docName.appendChild(docName_text)
+    		docDesc = doc.createElement('description')
+    		document_.appendChild(docDesc)
+    		docDesc_text = doc.createTextNode(description)
+    		docDesc.appendChild(docDesc_text)
+    		return doc
+
+	def create_placemark(self, _name, _coords):
+    		"""Generate the KML Placemark for a given address."""
+		dict_coords = {'latitude' : _coords[0], 'longitude' : _coords[1]}
+    		doc = xml.dom.minidom.Document()
+    		pm = doc.createElement("Placemark")
+    		doc.appendChild(pm)
+    		name = doc.createElement("name")
+    		pm.appendChild(name)
+    		name_text = doc.createTextNode(_name)
+    		name.appendChild(name_text)
+    		desc = doc.createElement("description")
+    		pm.appendChild(desc)
+    		pt = doc.createElement("Point")
+    		pm.appendChild(pt)
+    		coords = doc.createElement("coordinates")
+    		pt.appendChild(coords)
+    		coords_text = doc.createTextNode('%(longitude)s,%(latitude)s' % dict_coords)
+    		coords.appendChild(coords_text)
+    		return doc
+
+	def print_data(self):
+		print kml_doc.toprettyxml(indent="  ", encoding='UTF-8')

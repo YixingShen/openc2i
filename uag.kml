@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+    <Document id="feat_1">
+        <Style id="stylesel_0">
+            <IconStyle>
+                <scale>2</scale>
+                <colorMode>normal</colorMode>
+                <heading>0</heading>
+                <Icon>
+                    <href>http://devices.sensorflock.com/icons/uag-icon.gif</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Placemark id="feat_2">
+            <name>uagd7</name>
+            <styleUrl>#stylesel_0</styleUrl>
+            <Point id="geom_0">
+                <coordinates>73.0479716667,33.5849583333,0.0</coordinates>
+            </Point>
+            <description>Sensor Name: uagd7
+Lat: 33.5849583333
+Long: 73.0479716667
+Active: Y
+Alert count: 134</description>
+        </Placemark>
+    </Document>
+</kml>

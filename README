@@ -1,0 +1,29 @@
+openc2i - Open Command and Control (C2I)
+
+Launched as part of Unattended Ground Sensor project.
+
+Unattended Ground Sensors (802.15.4) send encrypted messages and Thermal Video feeds are sent to the Command and Control via a Queue Base Station (QBS).
+
+Key Features:
+
+Multi-threaded Python Stack (multiprocessing)
+
+Live Video Feeds from Thermal Video Devices using Vlclib
+
+Real-time Speech Engine using pyTTSX
+
+Integrated with Google Earth & Maps for locating GPS equipped sensors in real-time
+
+Sensor control over UDP channels
+
+
+Dependencies:
+
+*) Python Tk
+*) pyttsx: http://pypi.python.org/pypi/pyttsx
+   requires: espeak
+*) Use SOCAT for testing with dummy sensor data
+
+NOTE:
+This stack is now obsolete and now longer in use by the project, however you are free to use it if it helps!
+
