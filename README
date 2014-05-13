@@ -1,14 +1,12 @@
 openc2i - Open Command and Control (C2I)
 
-Launched as part of Unattended Ground Sensor project.
-
-Unattended Ground Sensors (802.15.4) send encrypted messages and Thermal Video feeds are sent to the Command and Control via a Queue Base Station (QBS).
+Sensors (802.15.4) send encrypted messages and Video feeds are sent to the Command and Control via a Queue Base Station (QBS).
 
 Key Features:
 
 Multi-threaded Python Stack (multiprocessing)
 
-Live Video Feeds from Thermal Video Devices using Vlclib
+Live Video Feeds from Video Devices using Vlclib
 
 Real-time Speech Engine using pyTTSX
 
